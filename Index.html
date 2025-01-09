@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<!-- Navigation Menu -->
+	<nav>
+   	<a href="#page1" onclick="showPage('page1')">Home</a>|
+   	<a href="#page2" onclick="showPage('page2')">Converters</a>|
+   	<a href="#page3" onclick="showPage('page3')">Equation Calculators</a>|
+		<a href="#page7" onclick="showPage('page7')">Colors</a>
+	</nav>
+
+	<!-- HOME : Page 1 -->
+	<section id="page1">
+   	<h1>Welcome to Converters & Calculators</h1>
+		<!-- Dropdown Options from Home page -->
+		<div class='convertersNequations'>
+			<!-- Converters dropdown options -->
+			<div class='cnc' id='convatas' onclick="showDrop('menu')">
+				<p>Converters</p>
+				<!-- Inverted triangle -->
+				<span class="caret" id='caret1'></span>  
+				<ul class="menu" id="menu">
+					<li><a href='#' onclick="showBoard('zer')">About Converters `N Equations</a></li>
+					<li><a href='#' onclick="showBoard('infix2postfix')">Infix to Postfix</a></li>
+					<li><a href='#' onclick="showBoard('base-converter')">Base Converter</li>
+					<li><a href='#' onclick="showBoard('undecided1')">Undecided 1</li>
+				</ul>
+			</div>
+	
+			<!-- Calculators dropwdown options -->
+			<div class='cnc' id='kalculators' onclick="showDrop('menu2')">
+				<p>Calculators</p>
+				<!--Inverted triangle -->
+				<span class="caret2" style='margin-top:-83px; margin-left:145px;'></span>
+				<ul class="menu2" id="menu2">
+					<li><a href='#'>Simple Equations</li>
+					<li><a href='#'>Quadratic Equations</li>
+					<li><a href='#'>Simultaneous Equations</li>
+				</ul> 
+			</div>
+		</div>
+		
+		<!-- Board zero: Introduction to Converters N Equations -->
+		<div class='board zero' id='zer'> 
+			<h1 class='board-heading'>About Converters `N Equations</h1> 
+			<!-- Use time to say greeting & then say day stuff -->
+			<p style='padding-left:20px; padding-right:20px;'>
+				Tata basini mala mala. Chichi rabi kuskurukus. Ter'matir gujen'geri. Si riri d'an kuma.
+				In zaka fadi fadi gaskia. Kwo mai taka ja maka ka'bia. Sai mu gwode shine gaskia. Don shi ne sar'kin gaskia. ya malakai duka'n talekai na kwari da tudu da sa mania.
+			</p>
+			<!-- display result -->
+			<!-- <p id='output0'></p> -->
+		</div>
+		
+		<!-- Board one: Infix to Postfix Converter -->
+		<div class='board one' id='infix2postfix'> 
+			<h1 class='board-heading'>Infix to Postfix</h1> 
+			<!-- Get User Input -->
+			<div class='user-input'>
+				<label for='input1'><p>Infix</p></label>
+				<input type='text' class='in' id='infix' placeholder='Enter infix...'>
+				<!-- submit button -->
+				<button onclick="computePostfix('infix')">Submit</button>
+			</div>
+			<!-- display result -->
+			<p id='output1'></p>
+		</div>
+		
+		<!-- Board two: Base Converter -->
+		<div class='board two' id='base-converter'> 
+			<h1 class='board-heading'>Base Converter</h1> 
+			<input type='text' placeholder='Enter number...'>
+		</div>
+		
+		<!-- Board three: Undecided 1 -->
+		<div class='board three' id='undecided1'> 
+			<h1 class='board-heading'>Undecided board</h1> 
+			<input type='text' placeholder='Enter heaven...'>
+		</div>
+
+	</section>
+
+<!-- Converters : Page 2 -->
+<section id="page2">
+	<h1>Placeholder 1</h1>
+	<!-- <div class='left'>
+   	<div class='convata' id='infix2postfix'><p>Infix to Postfix Converter</p></div>
+		<div class='convata' id='baseConverter'><p>Base Converter</p></div>
+		<div class='convata' id='asciiText2Numbers'><p>ASCII text to ASCII numbers</p></div>
+	</div> -->
+</section>
+
+	<!-- Equation Calcutors : Page 3 -->
+	<section id="page3">
+   	<h1>Placeholder 2</h1>
+		<!-- <div id='simple-equation'>This is where Simple Equations happen</div>
+		<div id='quadratic-equation'>This is where Quadratic Equations happens</div>
+		<div id='simultaneous-equation'>This is where Simultaneous Equation happens</div> -->
+	</section>
+
+	<!-- colors -->
+	<section id='page7'>
+		<h1 style='color:rgb(155,89,182);'>Dark Color Palet</h1>
+		<h3 style='color:rgb(46,204,113)'>Split Complementary</h3>
+		<div class='colors' style='background-color:#7C8A6B'><p>light kelp #7c8a6b: Use it for the primary background of the site or as the main color for your primary buttons, headers, and key UI elements: Eg Background color of the website or sections, Main buttons or primary call-to-action (CTA) buttons, Navigation bar or footer background.</p></div>
+		<div class='colors' style='background-color:#540D6E'><p>dark violet: #540D6E: Headlines or important text (e.g., h1, h2), Links or interactive elements like hover states for buttons, Small accent elements like borders, icons, or dividers.</p>
+</div>
+		<div class='colors' style='background-color:#3F51B5'><p>ultra marine #3F51B5: CTA buttons (e.g., “Sign Up”, “Learn More”).
+Active or hover states for links, Decorative elements, such as icons or illustrations, Background or borders for certain sections. [Neutral colors like white, light gray, and dark gray can help balance out the intensity of your color palette. Use these neutral tones for text, background areas, and as borders between different sections to prevent the colors from overwhelming the design]</p></div>
+		<h3>Triad 1</h3>
+		<div class='colors' style='background-color:#4b5d46'>dark kelp #4b5d46</div>
+		<div class='colors' style='background-color:#9e3d44'>red plum #9e3d44</div>
+		<div class='colors' style='background-color:#0bda51'>malchite #0bda51</div>
+		<h3>Triad 2</h3>
+		<div class='colors' style='background-color:rgb(155,89, 182)'><p>purple--base color: rgb(155, 89, 182). Use purple for dominant elements such as headings, large buttons, or backgrounds for smaller sections</p></div>
+		<div class='colors' style='background-color:rgb(46,204, 113)'><p>green--secondary color: rgb(46, 204, 113). Green can be used for subheadings, secondary buttons, or interactive elements like links or icons.</p></div>
+		<div class='colors' style='background-color:rgb(243,156, 18)'><p>orange: accent color: rgb(243, 156, 18). Orange is a great choice for calls-to-action, buttons, or highlighted text</div>
+		<h3>Double Compementary 1</p></h3>
+		<div class='colors' style='background-color:#4b5d46'>dark kelp #4b5d46</div>
+		<div class='colors' style='background-color:#6a0dad'>dioxazine #6a0dad</div>
+		<div class='colors' style='background-color:#7f4f24'>milk chocolate #7f4f24</div>
+		<div class='colors' style='background-color:#003153'>prussian blue #003153</div>
+	</section>
+
+	<!-- JavaScript -->
+	<script src='script.js'></script>
+	</body>
+</html>
+
+<!-- 
+//3. Show the specified board
+function showBoard(boardId) {
+	//hide all boards
+	let boards = document.querySelectorAll('board');
+	boards.forEach(function(bod) {
+		bod.style.display = 'none';
+	});
+	
+	//show the selected board
+	let activeBoard = document.getElementById(boardId);
+	if(activeBoard) {
+		activeBoard.style.display = 'inline-block';
+	}
+}
+//default to showing the zero board when the page loads
+window.onload = function() {
+	showBoard('zero');
+};
+
+//OLD 3
+function showBoard(boardId) {
+    // Hide all boards
+    let boards = document.querySelectorAll(`.board`);  //Assuming boards have a class `board`
+    boards.forEach(function(bod) {
+        bod.style.display = `none`;
+    });
+
+    // Show the selected board
+    let activeBoard = document.getElementById(boardId);
+    if (activeBoard) {
+        activeBoard.style.display = `block`;  // or `inline-block`, depending on your layout
+    }
+}
+// Default to showing the zero board when the page loads
+window.onload = function() {
+	showBoard(`.zero`);
+};
+-->
