@@ -98,7 +98,7 @@ function priority(ch) {
     return val;
 }
 
-//7. postConcition: Accepts op as arg & prompts the stack to pop according to rules conditions
+//9. postCondition: Accepts op as arg & prompts the stack to pop according to rules conditions
 function converter(infix) {
     //if infix is empty, abort
     if(infix.length===0) {
@@ -112,11 +112,11 @@ function converter(infix) {
     let stak = []; //declare array to use as a stack 
 
     //get user input 
-    sho = prompt("Choose display:\n\t(1) Only display result\n\t(2) Display working & result\nOption: ");
+//    sho = prompt("Choose display:\n\t(1) Only display result\n\t(2) Display working & result\nOption: ");
     //input validation
-    if(sho === null) {
-        alert("Input cannot be empty"); return;
-    }else{console.log('\n');}
+//    if(sho === null) {
+//        alert("Input cannot be empty"); return;
+//    }else{console.log('\n');}
 
     //loop
     for(let i=0; i<infix.length; i++) {
@@ -124,71 +124,71 @@ function converter(infix) {
         //if ch is alfa 
         if(isalpha(ch)) {   
             postfix += ch; //put it in postfix
-            sho==2 ? console.log(ch+" is an alphabet. Put it in postix. {" + staq + " \t " + postfix + "}\n") : console.log(""); 
+//            sho==2 ? console.log(ch+" is an alphabet. Put it in postix. {" + staq + " \t " + postfix + "}\n") : console.log(""); 
         }//if ch is a number
         else if(isdigit(ch) || ch=='.') {   
             postfix += ch; //put it in postfix
-            sho==2 ? consoloe.log(ch<<" is a number. Put it in postfix. {" + staq + " \t " + postfix + "}\n"): console.log(""); 
+//            sho==2 ? console.log(ch<<" is a number. Put it in postfix. {" + staq + " \t " + postfix + "}\n"): console.log(""); 
         }
         //if ch is (:
         else if(ch === '(') { 
             stak.push(ch); //put it in stack
-            staq += ch;   
+//            staq += ch;   
             a++; 
-            sho==2 ? console.log(ch + " is open-parenthesis. Put it in the stack. {" + staq + " \t " + postfix + "}\n") : console.log(""); 
+//            sho==2 ? console.log(ch + " is open-parenthesis. Put it in the stack. {" + staq + " \t " + postfix + "}\n") : console.log(""); 
         }
         //if ch is ) && a>1:
         else if(ch === ')') { 
-            sho===2 ? console.log(ch + " is close-parenthesis. Pop enclosed operator(s) & " + ch) : console.log(""); 
+//            sho===2 ? console.log(ch + " is close-parenthesis. Pop enclosed operator(s) & " + ch) : console.log(""); 
             //pop everything before ( into postfix except '('
-            while(stak[stak.length-1] != '(') {
+            while(stak[stak.length-1] !== '(') {
                 (stak[stak.length-1] != '(' && stak[stak.length-1]!=')') ? (postfix += stak[stak.length-1]) : (postfix=postfix);
                 //postfix += stak.top();
                 stak.pop();
-                staq.slice(0, staq.length - 1);  //mimic stak removal of last char
+//                staq.slice(0, staq.length - 1);  //mimic stak removal of last char
             }
             stak.pop(); //then pop off ( into the air or som'n
-            stak.length===0? staq="" : staq.slice(0, staq.length - 1); 
+//            stak.length===0? staq="" : staq.slice(0, staq.length - 1); 
             a=0;
-            sho===2 ? console.log(". {" + staq + " \t " + postfix + "}\n") : console.log(""); 
+//            sho===2 ? console.log(". {" + staq + " \t " + postfix + "}\n") : console.log(""); 
         }
         //if ch is operator:
         else if(isOp(ch)) {
             //else if stak is not empty
                 let k=0; let pre="";
             while(true) {
-                k>0 ? pre="\t" : pre=""; //for proper spacing after 1st iteration
-                sho===2 ? console.log(pre + ch + " is operator. ") : console.log(""); 
+//                k>0 ? pre="\t" : pre=""; //for proper spacing after 1st iteration
+//                sho===2 ? console.log(pre + ch + " is operator. ") : console.log(""); 
                 //if stack is empty
                 if(stak.length===0) {  
-                    sho===2 ? console.log("Stack is empty, so put " + ch + " in stack. ") : console.log("");
+//                    sho===2 ? console.log("Stack is empty, so put " + ch + " in stack. ") : console.log("");
                     stak.push(ch);
-                    staq += ch;       
+//                    staq += ch;       
                     a>0 ? a++ : a=a; //increment a when op is added to stak
-                    sho===2 ? console.log("{" + staq + "\t" + postfix + "}\n") : console.log(""); 
+//                    sho===2 ? console.log("{" + staq + "\t" + postfix + "}\n") : console.log(""); 
                     break;
                 }
                 else { //if priority(stak.top) >= priority(ch):
                     if(priority(stak[stak.length-1]) >= priority(ch)) {
                         //move stak.top to postfix
-                        sho===2 ? console.log("Priority of " + stak[stak.length-1] + " >= priority of " + ch + "), so move " + stak[stak.length-1] + " into postfix. ") : console.log("");
+//                        sho===2 ? console.log("Priority of " + stak[stak.length-1] + " >= priority of " + ch + "), so move " + stak[stak.length-1] + " into postfix. ") : console.log("");
                         //move stack.top to postfix
                         stak[stak.length-1]!='(' && stak.top()!=')' ? (postfix += stak[stak.length-1]) : (postfix=postfix);
                         //postfix += stak.top();
                         stak.pop();
                         stak.length===0 ? staq="" : staq.slice(0, staq.length - 1);  
-                        sho===2 ? console.log("{" + staq + "\t" + postfix + "}\n") : console.log(""); 
+//                        sho===2 ? console.log("{" + staq + "\t" + postfix + "}\n") : console.log(""); 
                     }	
                     //if (priority of stack.top) < (priority of ch):
                     else if(priority(stak[stak.length-1]) < priority(ch)) {
-                        sho===2 ? console.log("Priority of " + stak.top() + " < priority of " + ch + ", so put " + ch + " in stack. ") : console.log(""); 		    
+//                        sho===2 ? console.log("Priority of " + stak.top() + " < priority of " + ch + ", so put " + ch + " in stack. ") : console.log(""); 		    
                         stak.push(ch); //put ch in stack
-                        staq += ch;   
+//                        staq += ch;   
                         a>0 ? a++ : a=a; //increment a when op is added to stak
-                        sho===2 ? console.log("{" + staq + "\t" + postfix + "}\n") : console.log(""); 
+//                        sho===2 ? console.log("{" + staq + "\t" + postfix + "}\n") : console.log(""); 
                         break;
                     }//close last if statement
-                    else {console.log("Not Captured"); break;}
+//                    else {console.log("Not Captured"); break;}
                 }
                 k++;
             } 
@@ -201,11 +201,18 @@ function converter(infix) {
             //pop all in stack into postfix
             stak[stak.length-1]!=='(' && stak[stak.length-1]!==')' ? (postfix += stak[stak.length-1]) : (postfix=postfix);
             //postfix += stak.top();
-            sho===2 ? console.log("\tput " + stak[stak.length-1] + " in postfix.") : console.log(""); 
+//            sho===2 ? console.log("\tput " + stak[stak.length-1] + " in postfix.") : console.log(""); 
             stak.pop();
-            staq.slice(0, staq.length - 1); //removes last char of staq 
-            sho===2 ? console.log(" {" + staq + "\t" + postfix + "}") : console.log(""); 
+//            staq.slice(0, staq.length - 1); //removes last char of staq 
+//            sho===2 ? console.log(" {" + staq + "\t" + postfix + "}") : console.log(""); 
         }
     }
+    return postfix;
 }
 
+//10. postCondition: test-runs the converter function
+function runConverter() {
+    //prompt user for infix input
+    let infix = prompt('Enter infix');
+    converter(infix);
+}
