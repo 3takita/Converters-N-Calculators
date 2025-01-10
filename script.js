@@ -109,7 +109,7 @@ function converter() {
     //variables
     let a=0; let sho=0; let n=0; 
     let done=false;
-    let postfix = ""; 
+//    let postfix = ""; 
     let staq="";    //mimics the stack container
     let stak = []; //declare array to use as a stack 
 
