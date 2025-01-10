@@ -107,7 +107,8 @@ function converter(infix) {
     } 
     //variables
     let a=0; let sho=0; let n=0; 
-    let done=false; 
+    let done=false;
+    let postfix = ""; 
     let staq="";    //mimics the stack container
     let stak = []; //declare array to use as a stack 
 
@@ -173,7 +174,7 @@ function converter(infix) {
                         //move stak.top to postfix
 //                        sho===2 ? console.log("Priority of " + stak[stak.length-1] + " >= priority of " + ch + "), so move " + stak[stak.length-1] + " into postfix. ") : console.log("");
                         //move stack.top to postfix
-                        stak[stak.length-1]!='(' && stak.top()!=')' ? (postfix += stak[stak.length-1]) : (postfix=postfix);
+                        stak[stak.length-1]!='(' && stak[stak.length-1]!=')' ? (postfix += stak[stak.length-1]) : (postfix=postfix);
                         //postfix += stak.top();
                         stak.pop();
                         stak.length===0 ? staq="" : staq.slice(0, staq.length - 1);  
@@ -207,12 +208,14 @@ function converter(infix) {
 //            sho===2 ? console.log(" {" + staq + "\t" + postfix + "}") : console.log(""); 
         }
     }
-    return postfix;
+    
+    // Display the postfix in the specified p element
+    document.getElementById("output1").textContent = "Postfix is: " + postfix;
 }
 
 //10. postCondition: test-runs the converter function
-function runConverter() {
-    //prompt user for infix input
-    let infix = prompt('Enter infix');
-    converter(infix);
-}
+//function runConverter() {
+//    //prompt user for infix input
+//    let infix = prompt('Enter infix');
+//    converter(infix);
+//}
