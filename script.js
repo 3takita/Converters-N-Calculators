@@ -62,7 +62,17 @@ function isOp(ch) {
   return (ch=='*' || ch=='/' || ch=='^' || ch=='+' || ch=='-' || ch=='=');
 }
 
-//6. Returns priority value of a character.  Use: priority(ch);
+//6. postCondion: Returns true if ch is an alphabet
+function isalpha(ch) {
+    return /^[a-zA-Z]$/.test(ch);
+}
+
+//7. Returns true if ch is a number
+function isdigit(ch) {
+    return !isNaN(ch);
+}
+
+//8. Returns priority value of a character.  Use: priority(ch);
 function priority(ch) {
    let val = 0;
    switch(ch) {
@@ -96,16 +106,21 @@ function converter(infix) {
         return;
     } 
     //variables
-    let a=0,sho=0,n=0; 
+    let a=0; let sho=0; let n=0; 
     let done=false; 
-    let staq=""; 
-    //option of `result only` or `how result was reached` & `the result`
-//    console.log("Choose display:\n\t(1) Only display result\n\t(2) Display working & result\nOption: ");
-//    cin>>sho;
-//    cout<<endl;
+    let staq="";    //mimics the stack container
+    let stak = []; //declare array to use as a stack 
+
+    //get user input 
+    sho = prompt("Choose display:\n\t(1) Only display result\n\t(2) Display working & result\nOption: ");
+    //input validation
+    if(sho === null) {
+        alert("Input cannot be empty"); return;
+    }else{console.log('\n');}
+
     //loop
-    for(int i=0; i<infix.length; i++) {
-        let ch = infix[i], next = infix[i+1], prev=infix[i-1]; 
+    for(let i=0; i<infix.length; i++) {
+        let ch = infix[i]; let next = infix[i+1]; let prev = infix[i-1]; 
         //if ch is alfa 
         if(isalpha(ch)) {   
             postfix += ch; //put it in postfix
@@ -113,67 +128,67 @@ function converter(infix) {
         }//if ch is a number
         else if(isdigit(ch) || ch=='.') {   
             postfix += ch; //put it in postfix
-            sho==2 ? consoloe.log(ch<<" is a number. Put it in postfix. {"<<staq<<" \t "<<postfix<<"}\n"<<endl : cout<<""; 
+            sho==2 ? consoloe.log(ch<<" is a number. Put it in postfix. {" + staq + " \t " + postfix + "}\n"): console.log(""); 
         }
         //if ch is (:
-        else if(ch == '(') { 
+        else if(ch === '(') { 
             stak.push(ch); //put it in stack
             staq += ch;   
             a++; 
-            sho==2 ? cout<<ch<<" is open-parenthesis. Put it in the stack. {"<<staq<<" \t "<<postfix<<"}\n"<<endl : cout<<""; 
+            sho==2 ? console.log(ch + " is open-parenthesis. Put it in the stack. {" + staq + " \t " + postfix + "}\n") : console.log(""); 
         }
         //if ch is ) && a>1:
-        else if(ch == ')' /*&& a>1*/) { 
-            sho==2 ? cout<<ch<<" is close-parenthesis. Pop enclosed operator(s) & "<<ch : cout<<""; 
+        else if(ch === ')') { 
+            sho===2 ? console.log(ch + " is close-parenthesis. Pop enclosed operator(s) & " + ch) : console.log(""); 
             //pop everything before ( into postfix except '('
-            while(stak.top() != '(') {
-                stak.top()!='(' && stak.top()!=')' ? (postfix += stak.top()) : (postfix=postfix);
+            while(stak[stak.length-1] != '(') {
+                (stak[stak.length-1] != '(' && stak[stak.length-1]!=')') ? (postfix += stak[stak.length-1]) : (postfix=postfix);
                 //postfix += stak.top();
                 stak.pop();
-                staq.erase(staq.length()-1,1); 
+                staq.slice(0, staq.length - 1);  //mimic stak removal of last char
             }
             stak.pop(); //then pop off ( into the air or som'n
-            stak.empty()? staq="" : staq.erase(staq.length()-1,1); 
+            stak.length===0? staq="" : staq.slice(0, staq.length - 1); 
             a=0;
-            sho==2 ? cout<<". {"<<staq<<" \t "<<postfix<<"}\n"<<endl : cout<<""; 
+            sho===2 ? console.log(". {" + staq + " \t " + postfix + "}\n") : console.log(""); 
         }
         //if ch is operator:
         else if(isOp(ch)) {
             //else if stak is not empty
-                int k=0; string pre="";
+                let k=0; let pre="";
             while(true) {
-                k>0?pre="\t":pre=""; //for proper spacing after 1st iteration
-                sho==2 ? cout<<pre<<ch<<" is operator. " : cout<<""; 
+                k>0 ? pre="\t" : pre=""; //for proper spacing after 1st iteration
+                sho===2 ? console.log(pre + ch + " is operator. ") : console.log(""); 
                 //if stack is empty
-                if(stak.empty()) {  
-                    sho==2 ? cout<<"Stack is empty, so put "<<ch<<" in stack. ": cout<<"";
+                if(stak.length===0) {  
+                    sho===2 ? console.log("Stack is empty, so put " + ch + " in stack. ") : console.log("");
                     stak.push(ch);
                     staq += ch;       
                     a>0 ? a++ : a=a; //increment a when op is added to stak
-                    sho==2 ? cout<<"{"<<staq<<"\t"<<postfix<<"}\n"<<endl : cout<<""; 
+                    sho===2 ? console.log("{" + staq + "\t" + postfix + "}\n") : console.log(""); 
                     break;
                 }
                 else { //if priority(stak.top) >= priority(ch):
-                    if(priority(stak.top()) >= priority(ch)) {
+                    if(priority(stak[stak.length-1]) >= priority(ch)) {
                         //move stak.top to postfix
-                        sho==2 ? cout<<"Priority of "<<stak.top()<<" >= priority of "<<ch<<"), so move "<<stak.top()<<" into postfix. " : cout<<"";
+                        sho===2 ? console.log("Priority of " + stak[stak.length-1] + " >= priority of " + ch + "), so move " + stak[stak.length-1] + " into postfix. ") : console.log("");
                         //move stack.top to postfix
-                        stak.top()!='(' && stak.top()!=')' ? (postfix += stak.top()) : (postfix=postfix );
+                        stak[stak.length-1]!='(' && stak.top()!=')' ? (postfix += stak[stak.length-1]) : (postfix=postfix);
                         //postfix += stak.top();
                         stak.pop();
-                        stak.empty()? staq="" : staq.erase(staq.length()-1,1); 
-                        sho==2 ? cout<<"{"<<staq<<"\t"<<postfix<<"}\n"<<endl : cout<<""; 
+                        stak.length===0 ? staq="" : staq.slice(0, staq.length - 1);  
+                        sho===2 ? console.log("{" + staq + "\t" + postfix + "}\n") : console.log(""); 
                     }	
                     //if (priority of stack.top) < (priority of ch):
-                    else if(priority(stak.top()) < priority(ch)) {
-                        sho==2 ? cout<<"Priority of "<<stak.top()<<" < priority of "<<ch<<", so put "<<ch<<" in stack. " : cout<<""; 		    
+                    else if(priority(stak[stak.length-1]) < priority(ch)) {
+                        sho===2 ? console.log("Priority of " + stak.top() + " < priority of " + ch + ", so put " + ch + " in stack. ") : console.log(""); 		    
                         stak.push(ch); //put ch in stack
                         staq += ch;   
                         a>0 ? a++ : a=a; //increment a when op is added to stak
-                        sho==2 ? cout<<"{"<<staq<<"\t"<<postfix<<"}\n"<<endl : cout<<""; 
+                        sho===2 ? console.log("{" + staq + "\t" + postfix + "}\n") : console.log(""); 
                         break;
                     }//close last if statement
-                    else {cout<<"Not Captured"<<endl; break;}
+                    else {console.log("Not Captured"); break;}
                 }
                 k++;
             } 
@@ -181,15 +196,15 @@ function converter(infix) {
     } 
     
     //if @ this point stack isNot empty, move everything to postfix
-    if(stak.size()>0) { 
-        while(stak.size()>0) {
+    if(stak.length>0) { 
+        while(stak.length>0) {
             //pop all in stack into postfix
-            stak.top()!='(' && stak.top()!=')' ? (postfix += stak.top()) : (postfix=postfix );
+            stak[stak.length-1]!=='(' && stak[stak.length-1]!==')' ? (postfix += stak[stak.length-1]) : (postfix=postfix);
             //postfix += stak.top();
-            sho==2 ? cout<<"\tput "<<stak.top()<<" in postfix." : cout<<""; 
+            sho===2 ? console.log("\tput " + stak[stak.length-1] + " in postfix.") : console.log(""); 
             stak.pop();
-            staq.erase(staq.length()-1,1); 
-            sho==2 ? cout<<" {"<<staq<<"\t"<<postfix<<"}"<<endl : cout<<""; 
+            staq.slice(0, staq.length - 1); //removes last char of staq 
+            sho===2 ? console.log(" {" + staq + "\t" + postfix + "}") : console.log(""); 
         }
     }
 }
