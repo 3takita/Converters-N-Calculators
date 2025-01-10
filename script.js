@@ -99,8 +99,8 @@ function priority(ch) {
 }
 
 //9. postCondition: Accepts op as arg & prompts the stack to pop according to rules conditions
-function converter() {
-    var infix = document.getElementById('infixId').value;
+function converter(infixId) {
+    var infix = document.getElementById(infixId).value;
     alert('Infix entered is: ' + infix)
     //if infix is empty, abort
     if(infix.length===0) {
