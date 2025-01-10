@@ -177,7 +177,7 @@ body {
  /* --------  --------  Board -------  -------- */
  .board {
 	 display: none;
-	 color: white:
+	 color: white;
 	 margin-top: 320px;
 	 background-color: black; /* #333 */
 	 height: 500px;
