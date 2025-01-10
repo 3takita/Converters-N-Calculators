@@ -101,15 +101,16 @@ function priority(ch) {
 //9. postCondition: Accepts op as arg & prompts the stack to pop according to rules conditions
 function converter() {
     var infix = document.getElementById('infixId').value;
+    alert('Infix entered is: ' + infix)
     //if infix is empty, abort
     if(infix.length===0) {
-        console.log("Infix is empty"); 
+        alert("Infix is empty"); 
         return;
     } 
     //variables
     let a=0; let sho=0; let n=0; 
     let done=false;
-//    let postfix = ""; 
+    var postfix = ""; 
     let staq="";    //mimics the stack container
     let stak = []; //declare array to use as a stack 
 
@@ -212,6 +213,7 @@ function converter() {
     
     // Display the postfix in the specified p element
     document.getElementById("output1").textContent = "Postfix is: " + postfix;
+    alert('Postfix is ' + postfix); //Testing
 }
 
 //10. postCondition: test-runs the converter function
