@@ -1,256 +1,267 @@
 body {
-   font-family: Lato, Arial, sans-serif;
-   margin: 0;
-   padding: 0;
-	color: white;
-   /*background-color: #f4f4f4;*/
-	background-color: #1A1A1A; /* charcoal-black */
-}
-
-/* Navigation */
-nav {
-   position: fixed;
-   top: 0;
-   left: 0;
-   right: 0;
-   background-color: #000000/*#333*/; 
-   color: white;
-   padding: 10px 0; 
-   text-align: center;
-   z-index: 1000;
-}
-
-nav a {
-   margin: 0 15px;
-   color: white;
-   text-decoration: none;
-   padding: 10px 20px;
-   /*background-color: #444; */
-   border-radius: 5px;
-	font-size: 20px; 
-}
-
-a {
-	color: inherit; /* Inherits text color from the parent element */
-   outline: none;
-	text-decoration: none; /* removes the a-underline */
-}
-
-nav a:hover {
-   background-color: #666;
-}
-
-#converter-option {
-	margin-right: 20px;
-}
-
-.convertersNequations {
-	display: flex; /* inline-block */
-	flex-direction: row;
-	margin-left: auto;
+	font-family: Lato, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	 color: white;
+	/*background-color: #f4f4f4;*/
+	 background-color: #1A1A1A; /* charcoal-black */
+ }
+ 
+ /* Navigation */
+ nav {
 	position: fixed;
-}
-
-.cnc {
-	display: flex;
-	flex-direction: row;
-	width: 180px;
-}
-
-/* ----------  -----------    ----------   --------- */
-.menu-icon {
-    /*font-size: 24px;*/
-    color: white;
-    cursor: pointer;
-    display: block; /* Visible on desktop by default */
-}
-
-/* Hide the menu by default on desktop */
-.menu, .menu2 {
-    list-style-type: none;
-    display: none; /* Hide menu initially */
-    flex-direction: column;
-    position: absolute;
-    top: 40px; /* top margin for dropwdown list when displayed */
-    left: 20;
-    justify-content: center;
-    background-color: #333; /* mild black */
-    opacity: 0.9; 			 /* some transparency to the dropdown */
-    width: 180px;
-    transform: translateX(-60px); /* Moves the div 50px to the left */
-}
-
-.menu li, .menu2 li {
-    text-align: center;
-    border-top: 1px solid #444;
-}
-
-.menu li a, .menu2 li a {
-    color: white;
-    text-decoration: none;
-    padding: 15px;
-    display: block;
-}
-
-.menu li a:hover, .menu2 li a:hover {
-    background-color: #555;
-}
-
-.menu.open, .menu2.open {
-	display: flex;
-}
-
-/* ----------  -----------    ----------   --------- */
-
-.dropdown:focus .dropdown-menu { /*from `hover` to `focus`*/
-  display: block;
-}
-/* The inverted triangle (caret) */
-.caret, .caret2 {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 7px solid white;  /* Color of the caret */
-  margin-left: 15px;
-  margin-top: 30px;
-  vertical-align: middle;
-  margin-right: 10px;
-}
-
-/* Section Styles */
-section {
-   display: none;
-   padding: 60px 20px;
-   text-align: center;
-   min-height: 100vh;
-   box-sizing: border-box;
-}
-
-h1 {
-   font-size: 2em;
-   margin-bottom: 20px;
-	color: rgb(155,89,182); /* purple */
-}
-
-p {
-   font-size: 1.2em;
-}
-        
-/* Add smooth scrolling */
-html {
-   scroll-behavior: smooth;
-}
-
-/* Home Page-1 */
-#page1 {
-	background-image: url("images/cover-img.jpeg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	justify-content: space-between;
-	opacity: 0.9;
-}
-
-.colors {
-	height: 100px;
-	size: 30px;
-}
-
-/* Page 2 */
-.convata {
-	/* margin-bottom: -5px; */
-	/*background-color: #4b5d46; // purple */
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: #000000/*#333*/; 
+	color: white;
+	padding: 10px 0; 
+	text-align: center;
+	z-index: 1000;
+ }
+ 
+ nav a {
+	margin: 0 15px;
+	color: white;
+	text-decoration: none;
+	padding: 10px 20px;
+	/*background-color: #444; */
 	border-radius: 5px;
-	height: 30px;
-	width: 300px;
-	size:40px;
-	color: rgb(243,156,18);
-}
-
-.left {
-	display: flex;
-	flex-direction: row;
-}
-
-/* --------  --------  Board -------  -------- */
-.board {
+	 font-size: 20px; 
+ }
+ 
+ a {
+	 color: inherit; /* Inherits text color from the parent element */
+	outline: none;
+	 text-decoration: none; /* removes the a-underline */
+ }
+ 
+ nav a:hover {
+	background-color: #666;
+ }
+ 
+ #converter-option {
+	 margin-right: 20px;
+ }
+ 
+ .convertersNequations {
+	 display: flex; /* inline-block */
+	 flex-direction: row;
+	 margin-left: auto;
+	 position: fixed;
+ }
+ 
+ .cnc {
+	 display: flex;
+	 flex-direction: row;
+	 width: 180px;
+ }
+ 
+ /* ----------  -----------    ----------   --------- */
+ .menu-icon {
+	 /*font-size: 24px;*/
+	 color: white;
+	 cursor: pointer;
+	 display: block; /* Visible on desktop by default */
+ }
+ 
+ /* Hide the menu by default on desktop */
+ .menu, .menu2 {
+	 list-style-type: none;
+	 display: none; /* Hide menu initially */
+	 flex-direction: column;
+	 position: absolute;
+	 top: 40px; /* top margin for dropwdown list when displayed */
+	 left: 20;
+	 justify-content: center;
+	 background-color: #333; /* mild black */
+	 opacity: 0.9; 			 /* some transparency to the dropdown */
+	 width: 180px;
+	 transform: translateX(-60px); /* Moves the div 50px to the left */
+ }
+ 
+ .menu li, .menu2 li {
+	 text-align: center;
+	 border-top: 1px solid #444;
+ }
+ 
+ .menu li a, .menu2 li a {
+	 color: white;
+	 text-decoration: none;
+	 padding: 15px;
+	 display: block;
+ }
+ 
+ .menu li a:hover, .menu2 li a:hover {
+	 background-color: #555;
+ }
+ 
+ .menu.open, .menu2.open {
+	 display: flex;
+ }
+ 
+ /* ----------  -----------    ----------   --------- */
+ 
+ .dropdown:focus .dropdown-menu { /*from `hover` to `focus`*/
+   display: block;
+ }
+ /* The inverted triangle (caret) */
+ .caret, .caret2 {
+   display: inline-block;
+   width: 0;
+   height: 0;
+   border-left: 5px solid transparent;
+   border-right: 5px solid transparent;
+   border-top: 7px solid white;  /* Color of the caret */
+   margin-left: 15px;
+   margin-top: 30px;
+   vertical-align: middle;
+   margin-right: 10px;
+ }
+ 
+ /* Section Styles */
+ section {
 	display: none;
-	color: white:
-	margin-top: 320px;
-	background-color: black; /* #333 */
-	height: 500px;
-	width: 700px;
-	border-radius: 10px;
-	margin-bottom: 100px;
-}
-
-.board-heading {
-	padding-top: 20px;  /* puts space btw border top & h1 heading */
-	margin-top: 100px; /* puts space atop boarder */
-}
-
-.zero {
-	margin-top: 100px;
-}
-
-label p, #output1 {
-	size: 10px;
-	margin-left: 15px;
-	margin-right: 15px;
-	margin-top: 5px;
-	color: white;
-}
-.user-input {
-	display: flex;
-	flex-direction: row;
-	margin-top: 30px;
-	size: 20px;
-}
-.in { /* placeholder style */
-	background-color: #333;
+	padding: 60px 20px;
+	text-align: center;
+	min-height: 100vh;
+	box-sizing: border-box;
+ }
+ 
+ h1 {
+	font-size: 2em;
+	margin-bottom: 20px;
+	 color: rgb(155,89,182); /* purple */
+ }
+ 
+ p {
+	font-size: 1.2em;
+ }
+		 
+ /* Add smooth scrolling */
+ html {
+	scroll-behavior: smooth;
+ }
+ 
+ /* Home Page-1 */
+ #page1 {
+	 background-image: url("images/cover-img.jpeg");
+	 background-size: cover;
+	 background-repeat: no-repeat;
+	 background-position: center;
+	 justify-content: space-between;
+	 opacity: 0.9;
+ }
+ 
+ .colors {
+	 height: 100px;
+	 size: 30px;
+ }
+ 
+ /* Page 2 */
+ .convata {
+	 /* margin-bottom: -5px; */
+	 /*background-color: #4b5d46; // purple */
+	 border-radius: 5px;
+	 height: 30px;
+	 width: 300px;
+	 size:40px;
+	 color: rgb(243,156,18);
+ }
+ 
+ .left {
+	 display: flex;
+	 flex-direction: row;
+ }
+ 
+ /* --------  --------  Board -------  -------- */
+ .board {
+	 display: none;
+	 color: white:
+	 margin-top: 320px;
+	 background-color: black; /* #333 */
+	 height: 500px;
+	 width: 700px;
+	 border-radius: 10px;
+	 margin-bottom: 100px;
+ }
+ 
+ .board-heading {
+	 padding-top: 20px;  /* puts space btw border top & h1 heading */
+	 margin-top: 100px; /* puts space atop boarder */
+ }
+ 
+ .zero {
+	 margin-top: 100px;
+ }
+ 
+ label p, #output1 {
+	 size: 10px;
+	 margin-left: 15px;
+	 margin-right: 15px;
+	 margin-top: 5px;
+	 color: white;
+ }
+ 
+ .user-input, .display {
+	 display: flex;
+	 flex-direction: row;
+	 margin-top: 30px;
+	 size: 20px;
+ }
+ 
+ .output {
+	 background-color: #333;
+	 size: 10px;
+	 border-radius: 5px;
+	 width: 185px;
+	 height: 40px;
+ }
+ 
+ .in { /* placeholder style */
+	 background-color: #333;
+	 font-size: 15px;
+	 color: white;
+	 height: 30px;
+ }
+ button {
+	 background-color: #3F51B5;
+	 border-color: #3F51B5;
+	 color: white;
+	 border-radius: 5px;
+	 margin-top: -1.5px;
+	 margin-left: 15px;
 	font-size: 15px;
-	color: white;
-	height: 30px;
-}
-button {
-	background-color: #3F51B5;
-	border-color: #3F51B5;
-	color: white;
-	border-radius: 5px;
-	margin-top: -4px;
-	margin-left: 15px;
-	font-size: 15px;
-}
-
-/*
-<li><a href='#infix2postfix' onClick="showPage('infix2postfix')">Infix to Postfix</a></li>
-					<!-- base converter option from home page -->
-					<a href='#baseConverter' onClick="showPage('baseConverter')">Base Converter</a>
-					<!-- ASCII text 2 numbers option from home page -->
-					<a href='#asciiText2Numbers' onclick="showPage('asciiText2Numbers')">ASCII text to ASCII numbers</a>
-*/
-
-/*
-				DOCUMENTATION
-README: This is an app that enables the user  convert infix expressions to postfix. It also includes conversions, and ASCII text to ASCII numbers conversions. Functionalities will be incremented with time.
-				USER STORIES
-1. Create initial html, css & JS foundation for the app and ensure the navigation works.
-2. Select a COLOR SCHEME & stick to it.
-	a. 'Split Complementary': golden delicious, corn flower, kunzite
-	b. 'Triad': golden delicious, pink hydranger, shalow green sea
-	c. 'Double Complementary': golden delicious, lavendar, tumeric, light azure.
-				OR 
-   a. 'Split Complementary': dark kelp (#4b5d46), spectral violet (#8a4f96), navy blue (#000080)
-	b. 'Triad': dark kelp (#4b5d46), red plum (#9e3d44), malchite (#0bda51)
-	c. 'Double Complementary': dark kelp (4b5d46), dioxazine (#6a0dad), milk chocolate (#7f4f24), prussian blue (#003153);
-	
-3. Give each page a unique style.
-4. Write functions for each option & ensure they work. Document issues & how they were solved.
-
-				WORK COMPLETED
-1. (1/4/25): Created Home, Converter & Calculator pages, CSS styling initial JS to enable navigation from page to page. 
-	1/7&8/25: To `Home Page`, added `dropdown` menu & styling to `Converters` & `Equations`, linked `Converter` dropdown options to related boards 
-
-*/
+	height: 40px;
+ }
+ 
+ /*
+ <li><a href='#infix2postfix' onClick="showPage('infix2postfix')">Infix to Postfix</a></li>
+					 <!-- base converter option from home page -->
+					 <a href='#baseConverter' onClick="showPage('baseConverter')">Base Converter</a>
+					 <!-- ASCII text 2 numbers option from home page -->
+					 <a href='#asciiText2Numbers' onclick="showPage('asciiText2Numbers')">ASCII text to ASCII numbers</a>
+ */
+ 
+ /*
+				 DOCUMENTATION
+ README: This is an app that enables the user  convert infix expressions to postfix. It also includes conversions, and ASCII text to ASCII numbers conversions. Functionalities will be incremented with time.
+				 USER STORIES
+ 1. Create initial html, css & JS foundation for the app and ensure the navigation works.
+ 2. Select a COLOR SCHEME & stick to it.
+	 a. 'Split Complementary': golden delicious, corn flower, kunzite
+	 b. 'Triad': golden delicious, pink hydranger, shalow green sea
+	 c. 'Double Complementary': golden delicious, lavendar, tumeric, light azure.
+				 OR 
+	a. 'Split Complementary': dark kelp (#4b5d46), spectral violet (#8a4f96), navy blue (#000080)
+	 b. 'Triad': dark kelp (#4b5d46), red plum (#9e3d44), malchite (#0bda51)
+	 c. 'Double Complementary': dark kelp (4b5d46), dioxazine (#6a0dad), milk chocolate (#7f4f24), prussian blue (#003153);
+	 
+ 3. Give each page a unique style.
+ 4. Write functions for each option & ensure they work. Document issues & how they were solved.
+ 
+				 WORK COMPLETED
+ 1. (1/4/25): Created Home, Converter & Calculator pages, CSS styling initial JS to enable navigation from page to page. 
+	 1/7&8/25: To `Home Page`, added `dropdown` menu & styling to `Converters` & `Equations`, linked `Converter` dropdown options to related boards 
+ 
+ */
