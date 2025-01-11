@@ -122,7 +122,7 @@ body {
  /* Section Styles */
  section {
 	display: none;
-	padding: 60px 20px;
+	padding: 60px 20px; //from `60px 20px`
 	text-align: center;
 	min-height: 100vh;
 	box-sizing: border-box;
@@ -132,6 +132,7 @@ body {
 	font-size: 2em;
 	margin-bottom: 20px;
 	 color: rgb(155,89,182); /* purple */
+	 text-align: center;    /* centers the text in the div */
  }
  
  p {
@@ -178,7 +179,7 @@ body {
  .board {
 	 display: none;
 	 color: white;
-	 margin-top: 320px;
+	 margin-top: 100; 				//from 320px;
 	 background-color: black; /* #333 */
 	 height: 500px;
 	 width: 700px;
@@ -193,6 +194,7 @@ body {
  
  .zero {
 	 margin-top: 100px;
+	 display: inline-block;
  }
  
  label p, #output1 {
@@ -235,6 +237,21 @@ body {
 	height: 40px;
  }
  
+ /*#step-titles {
+	 display: flex;
+	 flex-direction: row;
+ } */
+ 
+ .steps {
+	 display: flex;
+	 flex-direction: row;	
+	 margin-top: 20px;
+ }
+ .step-container {
+	 display: flex;
+	 flex-direction: column;
+ }
+ 
  /*
  <li><a href='#infix2postfix' onClick="showPage('infix2postfix')">Infix to Postfix</a></li>
 					 <!-- base converter option from home page -->
@@ -263,5 +280,6 @@ body {
 				 WORK COMPLETED
  1. (1/4/25): Created Home, Converter & Calculator pages, CSS styling initial JS to enable navigation from page to page. 
 	 1/7&8/25: To `Home Page`, added `dropdown` menu & styling to `Converters` & `Equations`, linked `Converter` dropdown options to related boards 
- 
+    1/10/25: Completed troubleshooting & bug fix for why postfix won't display. I forgot to comment out a line of rough work. 
+	         Also started `Stack` and `Postfix` columns that show different stages of the converstion process.
  */

@@ -71,6 +71,23 @@
 				<!-- submit button -->
 				<button onclick="converter('infi')">Submit</button>
 			</div>
+			
+			<!-- show steps -->
+			<div class='steps' id='steps'>
+				<div class='step-container'>
+					<p style='text-align:center;'>Stack</p>
+					<div class='output' style='margin-left:15px; margin-right:20px;'>
+						<p id='stack-steps'></p><!-- stack steps -->
+					</div>
+				</div>
+				<div class='step-container'>
+					<p style='text-align:center;'>Postfix</p>
+					<div class='output'>
+						<p id='postfix-steps'></p><!-- postfix steps -->
+					</div>
+				</div>
+			</div>
+			
 			<!-- display result -->
 			<div class='display'>
 				<label for='output1'><p>Postfix</p></label>
@@ -179,4 +196,7 @@ function showBoard(boardId) {
 window.onload = function() {
 	showBoard(`.zero`);
 };
+
+1/10/25: Completed troubleshooting for postfix-not-displaying
+1/11/25: Continue with line80: stack & postfix steps
 -->
